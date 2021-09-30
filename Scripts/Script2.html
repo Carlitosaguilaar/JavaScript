@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        do {
+            var nota = prompt ("Introduce tu nota. ");
+
+            if (Number (nota) == nota) {
+                if (nota >= 0 && nota <= 10) {
+                    if (nota < 3) {
+                        alert("Muy deficiente. ");
+                        }
+                    else if (nota < 5 ) {
+                        alert("Insuficiente. ");
+                    }
+                    else if (nota < 6){
+                        alert ("Suficiente. ");
+                    }
+                    else if (nota< 7) {
+                        alert ("Bien");
+                    }
+                    else if (nota< 8) {
+                        alert ("Notable");                        
+                    }
+                    else if (nota >= 9) {
+                        alert ("Sobresaliente");
+                    }
+                }
+                else{
+                alert ("Nota errónea");
+                }
+            }
+            else{
+                if (nota != undefined) {
+                    alert ("Introduce un número válido");
+                    
+                }
+            }
+            
+        } while (nota!=undefined);     
+
+    </script>
+</body>
+</html>
