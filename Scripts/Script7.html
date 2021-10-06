@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Script 7</title>
+</head>
+<body>
+    <script>
+
+        for (var i=1; i<=500; i++){ //Bucle que escribe del 1 al 500            
+            if (i%4==0 && i%9==0) {
+                document.write (i+" (Múltiplo de 4 y 9)"+"<br>"); //Al ser la más restrictiva, ponemos primero el if que indica si es multiplo de ambos numeros
+            }
+            else if (i%4==0) {
+                document.write(i+" (Múltiplo de 4.)"+"<br>");   //Condicion que indica si es múltiplo de 4 (solamente)
+                
+            }
+            else if (i%9==0) {
+                document.write(i+" (Múltiplo de 9.)"+"<br>");   //Condicion que indica si es múltiplo de 9 (solamente)
+            }
+            else{
+                document.write(i+"<br>");       //Condicion que escribe el resto de números (los que no cumplen ninguna de las condiciones mencionadas anteriormente)
+            }
+            if (i%5==0) {
+                document.write("-------------"+"<br>"); //Condicion que cada 5 lineas va a escribir una linea horizontal
+                //Es importante dejarlo fuera de los otros if ya que si no, cuando coincicide con algun multiplo de 4 o 9, no va a escribir la linea horizontal.
+            }  
+        }
+    </script>
+</body>
+</html>
