@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var num1 = parseInt(Math.random()*99+1);
+        var num2 = parseInt(Math.random()*99+1);
+        var num3 = parseInt(Math.random()*99+1);
+
+        while (num1 == num2 || num1==num3) {
+            var num1 = parseInt(Math.random()*99+1);   
+        }
+
+        while (num2==num1 || num2==num3) {
+            var num2 = parseInt(Math.random()*99+1);
+        }
+        document.write ("El primer número es "+num1+", el segundo es "+num2+" y el tercero es "+num3);
+
+    </script>
+</body>
+</html>
