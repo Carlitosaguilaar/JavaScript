@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    
+    <script>
+        
+        var texto = prompt("Introduce texto:");
+        var pos = texto.length;     //Calculamos cuantos caracteres hay en el texto
+        var caracter;
+        for (var i = 0; i < pos; i++) {
+            caracter = texto.charAt(i); 
+            if (i == pos-1) {
+                document.write(caracter);       //Vamos seleccionando cada caracter
+            }
+            else {
+                document.write(caracter + "-"); //Escribimos un "-" entre caracteres
+            }
+        }
+
+    </script>
+
+</body>
+</html>

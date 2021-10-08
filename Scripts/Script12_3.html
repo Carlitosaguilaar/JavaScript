@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        
+        var texto = prompt ("Inserta un texto: ");      //Pedimos texto
+        var contador=0;
+        var pos = texto.length;    
+        for (var i = 0; i < pos; i++) {
+            var caracter= texto.charAt(i);     
+            if (caracter == "a" || caracter == "e" || caracter == "i" || caracter == "o" || caracter == "u") {
+                contador++      //Sumamos uno al contador cuando son minusculas
+            }
+            if (caracter == "A" || caracter == "E" || caracter == "I" || caracter == "O" || caracter == "U" ) {
+                contador++      //Sumamos uno al contador cuando son mayúsculas
+                
+            }
+        }
+
+        document.write("Hay un total de "+contador+" vocales.");
+
+
+    </script>
+
+</body>
+</html>
