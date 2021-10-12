@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale==1.0">
+    <title>Rock, Paper, Scissors</title>
+</head>
+<body>
+
+    <script>
+        
+        var nombre = prompt("Bienvenido al Piedra, Papel o Tijeras. Introduce tu nombre")
+        var partidas = 0;
+        var winuser = 0;
+        var winmaquina = 0;
+        var empates = 0 ;
+        var opcionusu=""        //Declaramos variables
+        var opcionmaq=""
+        var num=0
+        var maquina
+
+        do {
+
+            if (partidas>=1) {
+                alert ("Veo que estás demasiado aburrid@... sigamos :)") 
+            }
+            partidas++
+
+            opcionusu = prompt("Escribe piedra, papel o tijeras.")
+            maquina = alert ("Es turno de la máquina... ")
+            maquina = parseInt((Math.random()*3+1))
+
+            if (maquina<=1){
+                opcionmaq="piedra"
+            }
+            else if (maquina>1 && maquina<3){
+                opcionmaq="papel"
+            }
+            else if (maquina>2){
+                opcionmaq="tijeras"
+            }
+
+            alert ("la máquina ha sacado " +opcionmaq)
+
+            if ((opcionusu=="piedra") && (opcionmaq=="piedra")) {
+                alert ("Casi te gana la máquina, replantéate lo que haces con tu vida, te lo digo en serio")
+                empates++; 
+            }
+            
+            else if ((opcionusu=="piedra") && (opcionmaq=="papel")) {
+                alert ("Te acaba de ganar la máquina, vaya parguela.")
+                winmaquina++;
+            }
+            
+            else if ((opcionusu=="piedra") && (opcionmaq=="tijeras")) {
+                alert ("Nove si tienes suerte loco, has ganao por que la máquina te está dejando, parguela")
+                winuser++;
+            }
+
+            else if ((opcionusu=="papel") && (opcionmaq=="piedra")) {
+                alert ("Nove si tienes suerte loco, has ganao por que la máquina te está dejando, parguela")
+                winuser++;
+            }
+
+            else if ((opcionusu=="papel") && (opcionmaq=="papel")) {
+                alert ("Casi te gana la máquina, replantéate lo que haces con tu vida, te lo digo en serio")
+                empates++; 
+            }
+
+            else if ((opcionusu=="papel") && (opcionmaq=="tijeras")) {
+                alert ("Te acaba de ganar la máquina, vaya parguela.")
+                winmaquina++;
+            }
+
+            else if ((opcionusu=="tijeras") && (opcionmaq=="piedra")) {
+                alert ("Te acaba de ganar la máquina, vaya parguela.")
+                winmaquina++;
+            }
+
+            else if ((opcionusu=="tijeras") && (opcionmaq=="papel")) {
+                alert ("Nove si tienes suerte loco, has ganao por que la máquina te está dejando, parguela")
+                winuser++;
+            }
+
+            else if ((opcionusu=="tijeras") && (opcionmaq=="tijeras")) {
+                alert ("Casi te gana la máquina, replantéate lo que haces con tu vida, te lo digo en serio")
+                empates++;
+            }
+
+            alert ("Llevamos "+empates+" empates, "+winuser+" victorias de "+nombre +" y "+winmaquina+" victorias de la máquina")
+
+        } while (confirm("¿Quieres seguir jugando?"));
+            
+    </script>
+</body>
+</html>
