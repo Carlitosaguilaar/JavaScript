@@ -11,19 +11,20 @@
     <script>
         
         function IVA(precio, porcentaje) {
-            return precio * (iva/100);
+            var IVAincluido = precio + (precio * porcentaje / 100);
+            return IVAincluido;
         }
 
-        var precio = prompt ("Dime el precio del producto.")
-        var porcentaje = prompt ("Dime el porcentaje de iva. ")
+        var precio = parseInt(prompt ("Dime el precio del producto."))
+        var porcentaje = parseInt(prompt ("Dime el porcentaje de iva. "))
+        var total;
 
         if (porcentaje > 0) {
-            var total = IVA (precio, porcentaje)
+            total = IVA(precio, porcentaje)
             
         }
         else{
-            porcentaje = 21;
-            var total = IVA (precio, porcentaje)
+            total = IVA(precio, 21)
         }
 
         document.write ("El precio total es de: "+total)

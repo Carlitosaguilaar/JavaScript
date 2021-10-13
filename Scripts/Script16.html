@@ -9,21 +9,42 @@
 <body>
     
     <script>
-
-
+        
         var numero;
+        var check = false;
+        var num;
 
         function random(min,max){
-        numero = Math.round((Math.random() * (max-min)) + min);
+        numero = Math.floor(Math.random() * (max-min)) + min;
         return numero;
         }
 
+        var todosnumeros = new Array ();
+
             for (var i=1; i<=100;i++){
-                random =random(1,1000)
-                document.write (random+"<br>");
+
+                do {
+                    check = true;
+                    num = random(1,1000);
+                    for(var j=1; j <= todosnumeros.length; j++){
+                        if(num == todosnumeros[j]){
+                        check = false;
+                        }
+                    }
+                
+                } while (check == false);
+
+                todosnumeros[i] = num;
+
             }
 
-        </script>
+            for(var i=1; i <= todosnumeros.length-1; i++){
+
+                document.write(todosnumeros[i] + "<br>");
+                
+            }
+
+    </script>
 
 </body>
 </html>
