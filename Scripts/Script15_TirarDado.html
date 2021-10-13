@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TirarDado</title>
+</head>
+<body>
+    <script>
+
+        var contador1=0;
+        var contador2=0;
+        var contador3=0;
+        var contador4=0;
+        var contador5=0;
+        var contador6=0;
+
+        function random(min,max){
+        numero = Math.floor(Math.random()*6)+1;
+        return numero;
+        }
+
+        for (var i = 1; i <= 1000 ; i++){
+            tirada = random();
+            switch(numero){
+                case 1:
+                    contador1++;
+                    break;
+                case 2:
+                    contador2++;
+                    break;
+                case 3:
+                    contador3++;
+                    break;
+                case 4:
+                    contador4++;
+                    break;
+                case 5:
+                    contador5++;
+                    break;
+                case 6:
+                    contador6++;
+                    break;
+            }
+        }
+
+        document.write ("El 1 ha salido "+contador1+" veces. <br>El 2 ha salido "+contador2+" veces. <br>")
+        document.write ("El 3 ha salido "+contador3+" veces. <br>El 4 ha salido "+contador4+" veces. <br>")
+        document.write ("El 5 ha salido "+contador5+" veces. <br>El 6 ha salido "+contador6+" veces. ")
+
+
+    </script>
+</body>
+</html>
