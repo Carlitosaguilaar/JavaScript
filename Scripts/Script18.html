@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario comprobación </title>
+</head>
+<body>
+    
+    <form action="saludo"></form>
+
+        <label for="nombre">Usuario: </label>
+        <input type="text" id="Usuario">
+        <br><br>
+        <label for="nombre">Nombre: </label>
+        <input type="text" id="Nombre" pattern="[a-z]{1}[A-Z]{1}">
+        <br><br>
+        <label for="nombre">Apellidos: </label>
+        <input type="text" id="Apellidos" pattern="[a-z]{1}[A-Z]{1}">
+        <br><br>
+        <label for="nombre">Contraseña: </label>
+        <input type="text" minlength="10" id="Contraseña" required pattern="[A-Z]{1}[/^+$/]{1}" title="Tiene que contener una mayúscula y un caracter especial"/>
+        <br><br>
+        <label for="nombre">Confirmación contraseña: </label>
+        <input type="text" minlength="10" id="Confirmacion" required pattern="[A-Z]{1}[/^+$/]{1}" title="Tiene que contener una mayúscula y un caracter especial"/>
+        <br><br>
+        <input type="submit" value="Comprobar" onclick="checkcontraseña()">
+
+        
+    </form>
+
+
+    <script>
+
+        var contraseña = document.getElementById ("Contraseña")     //Buscamos el elemento contraseña
+        var nombre = document.getElementById ("Confirmacion")     //Buscamos el elemento confirmacion
+
+
+        function checknombre() {
+
+            var nombre = document.getElementById ("Nombre").value     //Buscamos el elemento nombre
+            if (nombre) {
+                alert("ERROR. El usuario no pueden contener números");
+            }
+        }
+
+        function checkapellidos() {
+            var apellidos = document.getElementById("Apellidos").value        //Buscamos el elemento apellidos
+            if (apellidos) {
+                alert("ERROR. Los apellidos no puede contener números");
+            }
+        }
+
+        function checkcontraseña(){
+            var contraseña = document.getElementById("Contraseña").value
+            var contraseña2 = document.getElementById("Confirmacion").value
+
+            if (contraseña==contraseña2) {
+                alert ("Correcto")
+            }
+            else{
+                alert ("Las contraseñas no coinciden")
+            }
+        }
+
+        
+
+
+
+
+
+    </script>
+
+</body>
+</html>
