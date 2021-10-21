@@ -17,17 +17,17 @@ function jugar() {
     var numeromaquina = parseInt(Math.random()*10+1);
 
     do {
-        var numerousuario = prompt ("Dime un número: ");
+        var numerousuario = prompt ("Dime un número del 1 al 10: ");
 
     if (numerousuario<numeromaquina) {
-        alert ("Te has quedado corto");
+        alert ("Ups. Te has quedado corto");
         
     }
     else if (numerousuario>numeromaquina){
-        alert ("Te has pasado")
+        alert ("Vaya. Te has pasado")
     }
     else{
-        alert ("Has acertado!!")
+        alert ("Oleee. Has acertado!!")
     }
     } while (numerousuario!=numeromaquina);
     
@@ -39,9 +39,11 @@ function bolera() {
     var numpersonas = prompt ("Dime el número de jugadores: ");
     var preciototal = 0;
     var contadorpersonas=0;
+    var contador = 0;
 
         do {
-            var edadpersona = prompt ("Dime la edad del jugador: ");
+            contador++
+            var edadpersona = prompt ("Dime la edad del jugador "+contador+":");
         
         if (edadpersona <6) {
             preciototal+=1;
@@ -64,7 +66,7 @@ function bolera() {
         } while (contadorpersonas!=numpersonas);
 
 
-        document.write ("Bolera Medaaaaaaaaaas asco"+ "")
+        document.write ("Bolera Alucine"+ "<br>")
         document.write ("Personas: "+numpersonas +"<br>");
         document.write ("Total a pagar: "+preciototal+ " €"); 
 }
