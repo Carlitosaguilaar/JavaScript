@@ -32,14 +32,22 @@ function retroceder() {
     }
     if (imagen == "04.jpg") {
         dedo.setAttribute("src", "03.jpg")
+        dedo2.setAttribute("disabled", "false")
+
     }
     if (imagen == "03.jpg") {
         dedo.setAttribute("src", "02.jpg")
+        dedo2.setAttribute("disabled", "false")
+
     }
     if (imagen == "02.jpg") {
         dedo.setAttribute("src", "01.png")  
-        dedo2.setAttribute("disabled", "true")
+        dedo2.setAttribute("disabled", "false")
       
+    }
+    if (imagen == "01.png") {
+        dedo2.setAttribute("disabled", "true")
+        
     }
 }
 
