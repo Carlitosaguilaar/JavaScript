@@ -40,7 +40,5 @@ function retroceder() {
         dedo.setAttribute("src", "01.png")
         dedoretroceder.disabled = true;
     }
-    else if (imagen == "01.png") {
-    }
 }
 

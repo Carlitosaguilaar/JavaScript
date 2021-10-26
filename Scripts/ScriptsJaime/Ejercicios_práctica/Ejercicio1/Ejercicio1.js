@@ -39,19 +39,11 @@ function bolera() {
     var numpersonas = prompt ("Dime el número de jugadores: ");
     var preciototal = 0;
     var contadorpersonas=0;
-<<<<<<< HEAD
-    var contador = 0;
-
-        do {
-            contador++
-            var edadpersona = prompt ("Dime la edad del jugador "+contador+":");
-=======
     var numjugador = 0;
 
         do {
             numjugador++;
             var edadpersona = prompt ("Dime la edad del jugador "+numjugador+":");
->>>>>>> 73801efcef07cbfcf0d6f802f2c9ee09eb85397f
         
         if (edadpersona <6) {
             preciototal+=1;
@@ -73,15 +65,8 @@ function bolera() {
         contadorpersonas++;
         } while (contadorpersonas!=numpersonas);
 
-
-<<<<<<< HEAD
-        document.write ("Bolera Alucine"+ "<br>")
-        document.write ("Personas: "+numpersonas +"<br>");
-=======
         document.write ("La bolera del WiiSports"+ "<br>")
-        document.write ("---------------------------------<br><br><br><br><br>")
-        
+        document.write ("---------------------------------<br><br><br><br><br>")        
         document.write ("Numero total de jugadores: "+numpersonas +"<br>");
->>>>>>> 73801efcef07cbfcf0d6f802f2c9ee09eb85397f
         document.write ("Total a pagar: "+preciototal+ " €"); 
 }
