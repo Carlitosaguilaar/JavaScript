@@ -8,18 +8,31 @@
 </head>
 <body>
     
-    <div class="div1" onclick="Num1()" width="100px" height ="100px">
-        <p>Hola</p>
-    </div>
+    <style>
+        #div1{
+            background-color: green;
+            width: 100px;
+            height: 100px;
+        }
+        #div2{
+            background-color: blue;
+            width: 100px;
+            height: 100px;
+        }
+        #div3{
+            background-color: red;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
 
-    <div class="div2" onclick="Num2()" width="100px" height ="100px">
-        <p>Hola</p>
-    </div>
-    
-    <div class="div3" onclick="Num3()" width="100px" height ="100px">
-        <p>Hola</p>
-    </div>
+    <div id="div1" onmouseover="Color1()" onmouseleave="colorNeutral()"></div>
+    <br>
+    <div id="div2" onmouseover="Color2()" onmouseleave="colorNeutral()"></div>
+    <br>
+    <div id="div3" onmouseover="Color3()" onmouseleave="colorNeutral()"></div>
 
+    <script src="Ejercicio10.js"></script>
 
 </body>
 </html>
