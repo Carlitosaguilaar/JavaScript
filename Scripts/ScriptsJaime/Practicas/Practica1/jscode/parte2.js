@@ -24,7 +24,7 @@ function comparar() {
     var generar = document.querySelector("input")       //Creamos dedos que nos sirven 
     var compara = document.getElementById("2");
 
-    if (valorizq > valorder) {              
+    if (valorizq < valorder) {              
         dedoabaj.innerHTML = dedoizq.innerHTML; //Si el valor de la caja izquierda es superior a la derecha, en la caja inferior se escribe el numero de la caja izquierda 
     }
     else{
