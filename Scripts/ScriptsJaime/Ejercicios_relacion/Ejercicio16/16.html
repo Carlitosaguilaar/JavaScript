@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio 16</title>
 </head>
+<script src="16.js"></script>
 <body>
 
-    <meter id="1" min="0" max="100"></meter>
-    <input type="button" value="Descargar" onclick="Descargar()">
+    <meter id="1" min="0" max="100" value="0"></meter>
+    <input type="button" id="2" value="Descargar" onclick="Descarga()">
     <br>
-    <progress></progress>
-    <input type="button" value="Cargar" onclick="Cargar()">
+    <progress id="3" value="0" max="100"></progress>
+    <input type="button" id="4" value="Cargar" min="0" max="100" onclick="Carga()">
 </body>
 </html>
