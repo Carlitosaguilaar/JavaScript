@@ -1,0 +1,17 @@
+.p1{
+    width: 15rem;
+    height: 10rem;
+    background-color: aqua;
+    color: black;
+}
+
+.pn{
+    display: block;
+    width: 15rem;
+    height: 1.1rem;
+    background-color: ghostwhite;
+    color: black;
+    border: 2px solid red;
+    text-align: center;
+    justify-content: center;
+}
