@@ -3,15 +3,13 @@ function cambios(){
     var capa = document.createElement("div");
     capa.style.opacity = 0.7;
     capa.style.backgroundColor="Black";
-    capa.onclick = hola ;
+    capa.onclick = salir;
 
 
     var imagen = document.querySelector("img");
     imagen.setAttribute("width", "10rem")
     imagen.setAttribute("height", "10rem")
 }
-
-
 
 function salir() {
     var fondo = document.querySelector("div")
@@ -21,5 +19,4 @@ function salir() {
     papi1.removeChild(fondo);
 
     img.parentNode.removeChild(img);
-    
 }

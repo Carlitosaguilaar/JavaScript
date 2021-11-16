@@ -43,12 +43,20 @@ function Borrarnuevo() {
 }
 
 
-
-
-
-
 function Sustituir() {
     var padre = document.querySelector("article");
     var elemento = document.getElementsByTagName("p");
     padre.removeChild(elemento[0])
+
+    var tabla = document.createElement("table")
+    for (let i=1; i<=2; i++){
+        var fila = document.createElement("tr");
+        for (let j = 1; j <= 2; j++){
+        var celda = document.createElement("td");
+        celda.innerHTML = " 1 ";
+        fila.appendChild(celda);
+        tabla.appendChild(fila);
+        }
+    }
+    document.body.appendChild(tabla);
 }

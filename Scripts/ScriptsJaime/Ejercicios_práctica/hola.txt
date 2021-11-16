@@ -1,0 +1,51 @@
+    Funciones anonimas
+ ------------------------
+
+Las funciones anonimas no tienen nombre, son las que se pueden guardar en variables. 
+
+se escribe function(){
+
+}
+
+capa.onclick = function (){
+    //Codigo
+}
+
+
+
+var divs = document.getElemenentsByTagName ("div);
+
+for (let i = 0; i< divs.length; i++){
+    divs[i].onclick=function(){                     //Se utiliza el 'this' para que se haga el cambio en el sitio por el que vamos (recorriendo en el Array)
+        this.style.backgroundColor="Red";
+    }
+}
+
+
+
+function borrar (ele){
+    var papi = ele.parentNode;
+    papi.removeChildren(ele)
+}
+
+for (let i = 0; i< divs.length; i++){
+    divs[i].onclick=function(){                     
+        borrar(this);
+    }
+}
+
+
+    Bloquear evento por defecto
+ ---------------------------------
+
+<a href = "asdjhkajj">
+</a>
+
+var enlace = document.querySelector("a");
+
+enlace onclick function (e)
+e.preventDefault();
+alert ("Casi, crack);
+
+
+
