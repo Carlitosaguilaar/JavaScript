@@ -1,0 +1,32 @@
+div{
+    height: 50rem;
+    width: 50%;
+    justify-content: center;
+    background-color: lightblue;
+    margin-top: 25vh;
+    margin-left: 25%;
+    position: absolute;
+    z-index: 1;
+}
+
+img{
+    position: absolute;
+    margin-left: 25%;
+    padding-top: 25%;
+    justify-content: center;
+    text-align: center;
+    width: 50%;
+    height: 50%;
+    z-index: 2;
+}
+
+.nuevo{
+    height: 50rem;
+    width: 50%;
+    position: absolute;
+    background-color: black;
+    margin-top: 20vh;
+    margin-left: 25%;
+    opacity: 0.7;
+    z-index: 3;
+}

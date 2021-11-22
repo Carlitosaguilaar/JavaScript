@@ -1,0 +1,18 @@
+.p1{
+    width: 15rem;
+    height: 10rem;
+    background-color: orange;
+    color: black;
+    border: 2px solid black;
+}
+
+.pnuevo{
+    display: block;
+    width: 15rem;
+    height: 10rem;
+    background-color: ghostwhite;
+    color: black;
+    border: 2px solid red;
+    text-align: center;
+    justify-content: center;
+}
