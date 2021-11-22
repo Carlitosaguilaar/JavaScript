@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiniela</title>
+</head>
+<body>
+    <script>
+
+        var numerofilas  = 14;
+        var columnas = 2;
+        var num = 2;
+
+        for (var i=1; i<=14; i++){
+            num = parseInt(Math.random()*(9-1)+1);
+
+            if(num<=3){
+                resultado=1;
+            }
+            else if(num>3 && num<=6){
+                resultado = "X";
+            }
+            else{
+                resultado = 2;
+            }
+
+            for (var j=1; j<=1; j++){
+                for (var k=1; k<=1; k++){
+                    document.write(resultado);
+
+                }
+            document.write("<br>")
+            }
+        }
+
+        document.write("<br><br>")
+        document.write("-------------------------------------- <br> Ejercicio 2 <br><br>")
+
+        //Ejercicio 2 
+        
+        for (var i=1; i<=14; i++){
+            num = parseInt(Math.random()*(10-1)+1);
+
+            if(num<=6){
+                resultado=1;
+            }
+            else if(num>6 && num<9){
+                resultado = "X";
+            }
+            else{
+                resultado = 2;
+            }
+
+            for (var j=1; j<=1; j++){
+                for (var k=1; k<=1; k++){
+                    document.write(resultado);
+
+                }
+            document.write("<br>")
+            }
+        }
+
+    </script>
+</body>
+</html>

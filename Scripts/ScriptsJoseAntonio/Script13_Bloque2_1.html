@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        var palabra = prompt("Introduce una palabra. ")
+        var pos = palabra.length
+        var vocal
+
+        for (var i=0; i<pos; i++){
+            vocal = palabra.charAt(i);
+            if (vocal=="a" || vocal=="e" || vocal=="i" || vocal=="o" || vocal=="u") {
+                pos=0                    
+            }      
+        }
+        document.write ("La primera vocal de la palabra es: "+vocal)
+
+    </script>
+
+</body>
+</html>

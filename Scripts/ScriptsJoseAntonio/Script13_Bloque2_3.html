@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IVA</title>
+</head>
+<body>
+
+    <script>
+        
+        function IVA(precio, porcentaje) {
+            var IVAincluido = precio + (precio * porcentaje / 100);
+            return IVAincluido;
+        }
+
+        var precio = parseInt(prompt ("Dime el precio del producto."))
+        var porcentaje = parseInt(prompt ("Dime el porcentaje de iva. "))
+        var total;
+
+        if (porcentaje > 0) {
+            total = IVA(precio, porcentaje)
+            
+        }
+        else{
+            total = IVA(precio, 21)
+        }
+
+        document.write ("El precio total es de: "+total)
+
+      </script>
+    
+</body>
+</html>
