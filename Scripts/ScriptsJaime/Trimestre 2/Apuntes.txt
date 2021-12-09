@@ -1,0 +1,68 @@
+Arrays functions (funciones con callback)
+                                    ---> Funciones como parámetros de funciones
+
+                                                *** Cuidao con el orden ***
+function misterio()             function misterio (edad, nombre, peso, num)                 function misterio()
+        |                                               |
+        |                                               |
+        v                                               v
+No recibe y no devuelve                     Recibe pero no devuelve
+
+
+
+function canuto (num, function()) ***Es una funcion dentro de otra funcion. Para que funcione la principal se tiene que ejecutar primero la que está dentro***
+
+-Ejemplo-
+
+var lista=[2,3,27,8,32,54,89,11,13,7,9, 23]
+
+--------------------------------------------|
+                                            |
+function mayorEdad(e){                      |
+    return e>=18    //Pregunta si e >=18    |   *3
+}                                           |
+                                            |
+--------------------------------------------|
+
+alert (mayorEdad(19))
+
+---> Devuelve true ya que e =19
+
+var res = lista.some(mayorEdad);    (Si utliizamos esta opcion, hay que escribir anteriormente el *3)
+
+/
+
+                                
+var res = lista.some ( (e)=>(e>=18;) ){
+var otra = lista.every (mayorEdad)
+
+
+  |--  lista.some = Va a buscar si algun valor de lista cumple el requisito que se pide en la funcion
+-|                                                                                                                        } Devuelve boolean
+  |--   lista.every = Va a comprobar que todos los valores cumplen (devuelve true), si no, devuelve false.
+
+
+funcion mostrar (e){
+    res = e·2;
+    console.log (res)
+}
+
+EL foreach, las funciones no van a devolver nada, aunque usemos el return. NUNCA VA A DEVOLVER NADA
+
+lista.foreach (mostrar)
+/
+             ***Elemento, indice/posicion***
+lista.foreach (function(e,i)){
+    var cad = ""
+    console.log(cad);
+}
+
+lista.map es como un foreach con diferencia de que este hace el return (para ello crea un array con los resultados del return)
+
+lista.map (nuevo);
+
+    function nuevo (e){
+        return e*2;;
+    }
+
+El map devuelve el mismo tamaño, lo unico que si no se cumple el requisito, saca undefined
