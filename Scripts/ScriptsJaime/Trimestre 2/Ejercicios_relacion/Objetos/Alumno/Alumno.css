@@ -1,0 +1,6 @@
+div{
+    border: 1px solid red;
+    width: 50%;
+    height: fit-content;
+    background-color: yellow;
+}
