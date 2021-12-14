@@ -1,4 +1,4 @@
-function comprobante(lista, valores) {
+function check(lista, valores) {
     var lista = [1,2,3,4,5,6,7,8,9];
 
     valores = prompt ("Dime el número que quieres comprobar que se encuentra en el Array")
@@ -12,5 +12,5 @@ function comprobante(lista, valores) {
     return "Falso";
 }
 
-    alert (comprobante())
+    alert (check())
 

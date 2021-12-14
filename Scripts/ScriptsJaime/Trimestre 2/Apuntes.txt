@@ -66,3 +66,83 @@ lista.map (nuevo);
     }
 
 El map devuelve el mismo tamaño, lo unico que si no se cumple el requisito, saca undefined
+
+--------------------------------------------------------------
+JSON arrays
+var nombrearray = ["Juan", "Fran", "Carlos", "Santi"];     //Se definen los arrays de esta forma
+console.log (usuarios[2]); 
+var temperaturas  = [
+                    [17,22,13],
+                    [27,21,23,32,35,1,3]
+                    ["ILLO", "JAJ"]
+                    ]  
+
+
+
+--------------------------------------------------------------
+JSON objetcs (no POO)       (Crear una estructura que almacene datos de una manera que nosotros queremos)
+var alumno = { nombre: "Juan", 
+               edad: = 23,
+               dni: "79839217S",
+               asignaturas: ["cliente", "servidores", "Interfaces"],
+               mentor:{
+                   nombre:"Sr Hormiga",
+                   edad: 83,
+                   sueldo: 1200,
+                   ciclos:['daw','dam','3d']
+               }
+             }
+
+Para sacar  por consola
+console.log(alumno.edad);
+alumno.edad=21 (Para cambiar el valor)
+alumno.asignaturas.foreach()
+        function (e){
+            console.log(e)
+        }
+
+        for (let i=0; i< alumno.asignaturas.length; i++)
+        console.log (alumno.asignaturas[i])
+
+Console.log (alumno.mentor.nombre) (Saca el nombre del mentor del alumno)
+
+--------------------------------------------------------------
+Recorrer todos los elementos de un objeto / array
+for, foreach, forin, forof
+
+forin
+-----
+for (let clave in alumno){
+    console.log(clave)
+}
+
+  for (let clave in alumno){
+    if (clave == 'mentor') {
+        for (let otra in alumno[clave]){
+            console.log (otra+" tiene "+alumno[clave][otra])
+        }
+    }
+    else{
+        console.log(clave+" tiene "+alumno[clave])
+    }
+}
+
+------
+forof 
+---
+
+for (let num of alumno.asignaturas){
+    console.log(num)
+}
+
+--------------------------------------------------------------
+
+
+
+
+--------------------------------------------------------------
+
+
+
+
+--------------------------------------------------------------
