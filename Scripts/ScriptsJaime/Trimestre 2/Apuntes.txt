@@ -150,12 +150,62 @@ var nombre=73;
 1- Almacenar valores. Hay 3 formas { localStorage ['popper'] = "Juanfran"                            }
                                      localStorage.setItems('popper', "Juanfran")
 
+                                     var valor = localStorage.popper;
+2- Recuperar valores. Hay 3 formas { var valor = localStorage['popper']          }
+                                     var valor = localStorage.getItem('popper')
 
 
+3- Borrar valores. Hay 3 formas    { localStorage.removeItem('popper') (Borra una entrada)  }
+                                     localStorage.clear();
+
+
+4- Objetos del Storage
+
+    for (let i=0; i<localStorage.length;i++){
+        var clave = localStorage.key(i)
+            localStorage[clave]
+            localStorage.getItem(clave)
+            localStorage.clave ***No deberia funcionar***
+    }
+
+- Guardar un objeto en el Storage. 
+
+        var alumno = {
+            nombre: "Juanfran",
+            edad:23,
+            curso:2
+        }
+
+Se utilizan las dos funciones siguientes
+        JSON.Stringify(objeto); //Convierte el texto_json a texto
+        JSON.parse(texto_json)  //Convierte el texto a objeto
+
+    ***Ejemplo***
+        var temp = JSON.Stringify(alumno);
+        alert (temp)
+        localStorage.rober = temp;
+        alumnootro = JSON.parse(localStorage.rober);
+
+
+
+
+Transformar información a texto -->  Almacenarlo en el Storage --> Devolverlo con formato JSON
 
 
 Session Storage: Si cierro el navegador, la información se pierde
 
+var nombre=73;
+                                     sessionStorage.popper = "Juanfran" / sessionStorage.popper = nombre;
+1- Almacenar valores. Hay 3 formas { sessionStorage ['popper'] = "Juanfran"                                   }
+                                     sessionStorage.setItems('popper', "Juanfran")
+
+                                     var valor = sessionStorage.popper;
+2- Recuperar valores. Hay 3 formas { var valor = sessionStorage['popper']                                     }
+                                     var valor = sessionStorage.getItem('popper')
+
+
+3- Borrar valores. Hay 3 formas    { sessionStorage.removeItem('popper') (Borra una entrada)  }
+                                     sessionStorage.clear();
 
 --------------------------------------------------------------
 
