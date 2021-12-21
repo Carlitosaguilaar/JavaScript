@@ -137,7 +137,24 @@ for (let num of alumno.asignaturas){
 
 --------------------------------------------------------------
 
+Las cookies son una cadena de texto y se manejan con un document.cookies.
+WebStorage [Local Storage / Session Storage]
 
+
+Local Storage: Se mantiene la información. 
+
+Se utiliza, para esto, un Array, que se va a ir rellenando usando cualquiera de las 3 diferentes formas de hacerlo.
+
+var nombre=73;
+                                     localStorage.popper = "Juanfran" / localStorage.popper = nombre;
+1- Almacenar valores. Hay 3 formas { localStorage ['popper'] = "Juanfran"                            }
+                                     localStorage.setItems('popper', "Juanfran")
+
+
+
+
+
+Session Storage: Si cierro el navegador, la información se pierde
 
 
 --------------------------------------------------------------
