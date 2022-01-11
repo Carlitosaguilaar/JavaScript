@@ -62,7 +62,7 @@ lista.map es como un foreach con diferencia de que este hace el return (para ell
 lista.map (nuevo);
 
     function nuevo (e){
-        return e*2;;
+        return e*2;
     }
 
 El map devuelve el mismo tamaño, lo unico que si no se cumple el requisito, saca undefined
@@ -208,8 +208,28 @@ var nombre=73;
                                      sessionStorage.clear();
 
 --------------------------------------------------------------
+Tema 10 13 y 15 no caen en el examen
+
+Formularios
+-----------
 
 
+Para acceder a un formulario, hay diferentes formas
 
+var f = d.getElementById
+    f = d.querySelector("form")
+    f = d.forms[0]
+    f = d.links
+    f = d.images
+
+    Acceder al tipo de un input
+
+    d.querySelector(input[type="text"])
+    Si se le añade un name al input ---> f.nombre
+
+
+    var texto = f.nombre.value
 
 --------------------------------------------------------------
+
+
