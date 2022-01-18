@@ -233,3 +233,96 @@ var f = d.getElementById
 --------------------------------------------------------------
 
 
+    Validar formulario
+    ------------------
+
+form id="formu" action "asdhkasjd.php"
+    campo       name = 'nombre'
+    campo       name = 'clave'
+    campo       name = 'repclave'
+    campo       name = 'edad'
+    checkbox    name = 'xoxo'
+    checkbox2   name = 'xoxo'
+
+Tenemos un formulario, con su respectivo boton submit. Abrimos el archivo js "validar.js". Creamos la funcion correspondiente ( function validar(), por ejemplo)
+
+Hacemos un window.onload = function(){
+    var boton = document.querySelector("input");
+    boton.onclick = function(e){
+        e.preventDefault();
+        validar();
+    }
+}
+
+
+
+function validar(){
+    var f = document.getElementById("formu");
+    var cn = f.nombre;
+
+    if (cn.value == "" || cn.value.length==0){      //Comprobar que NO esté vacío el campo
+        alert ("El campo nombre no puede esta vacío");  //Mínimo exigible, hacer cosas con DOM suben nota
+        cn.focus();
+        return; // (Para que no siga comprobando más campos)
+    }
+
+    var pass = f.clave
+
+    if ( (pass.value.length<8) && (pass.value.length>12) ){     //Comprobar que la contraseña tengas entre 8 y 12 valres
+        alert ("La contraseña no cumple el requisito de numero de caracteres);
+        pass.focus();
+        return;
+    }
+
+    var repe = f.repclave
+
+    if ( pass.value != repe.value){
+        alert ("Las contraseñas no coinciden")
+    }
+
+    var pass = f.clave
+    var nombre = f.nombre;
+
+    if (nombre.value == pass.value){
+        pass.value="";
+        pass.focus();
+        return;
+    }
+
+    var edad = f.edad       //Usamos un NaN (Not a Number)                              
+    
+    if ( isNan(f.edad.value)){
+        alert ("No se pueden poner letras en la edad);
+        pass.focus();
+        return;
+    }
+
+    if ( !f.xoxo[0].checked && !f.xoxo[1].checked){                //Comprobar que al menos un checkbox está marcado
+        alert ("Ninguno de los campos están marcados")
+        pass.focus();
+        return;
+    }
+
+    if (lista.selectedIndex==0){
+        alert
+    }
+
+    var cond = f.condiciones
+
+    if (!cond.checked){
+        alert ("Ninguna de las condiciones están marcadas")
+        pass.focus();
+        return;
+    }
+
+
+    var edad = f.edad;
+    if ( (edad.value<18) || (edad.value>60) ) {
+        alert ("")
+        pass.focus();
+        return;
+    }
+    
+    f.submit();
+
+}
