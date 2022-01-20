@@ -2,13 +2,11 @@
 function copiar() {
     var dedo = document.getElementById("cajatexto1");
     var dedo2 = document.getElementById("cajatexto2");
-    var texto = dedo.innerHTML;
 
-    console.log ("El valor de texto es:"+texto)
-
+    dedo2.placeholder = dedo.innerHTML
+    
     if (dedo.innerHTML!="") {
-
-        dedo2.innerHTML = texto;
+        dedo2.innerHTML = dedo.innerHTML;
         
     }
 } 
