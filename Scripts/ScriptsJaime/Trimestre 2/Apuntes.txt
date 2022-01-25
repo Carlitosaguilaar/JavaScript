@@ -205,7 +205,7 @@ var nombre=73;
 
 
 3- Borrar valores. Hay 3 formas    { sessionStorage.removeItem('popper') (Borra una entrada)  }
-                                     sessionStorage.clear();
+                                     sessionStorage.clear();        //Borra todas las variables
 
 --------------------------------------------------------------
 Tema 10 13 y 15 no caen en el examen
@@ -253,6 +253,7 @@ Hacemos un window.onload = function(){
         validar();
     }
 }
+
 
 
 
@@ -330,3 +331,87 @@ function validar(){                             //Creamos la funcion
     f.submit();         //Hacemos el submit al final para que al pulsar el boton, haga el submit cuando se haya comprobado TODO
 
 }
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+FLUJO DE EVENTOS
+
+Fase Burbuja                        |       Fase captura                            |               Cuando hay mezcla
+                                    |                                               |           
++ Específico        div     3       |   + Genérico        div       1               |           
+                                    |                                               |           (1) Todos los de captura (true)
+    |               p       2       |       |               p       2               |           
+    |                               |       |                                       |           
+    V               b       1       |       V                                       |           (2) Todos los de burbuja (false)
++ Genérico                          |   + Específico        b       3               |
+
+
+Listeners
+---------
+
+(1) Atributos de HTML
+    <p onclick="mostrar()">
+
+(2) En JS
+
+    var dedo = d.querySelector("p")
+    dedo.onclick = function(){
+        alert ("")
+    }
+
+    addEventListener()  //Asocia un evento a un elemento
+    removeEventListener() //Quita un evento asociado a un elemento
+
+
+// Ponemos el nombre del evento sin el "on", la función y, por ultimo true (evento de captura) o false (evento de burbuja)
+(3) var dedo =
+                //el evento sin el "on"
+    dedo.addEventListener("click", function(){
+                                    alert ("Hola")
+    }, false)
+
+//para borrar:
+
+    dedo.removeEventListener("click", function(){
+                                    alert ("Hola")
+    })
+
+
+//Se puede crear una variable con la funcion, qur serviria para ahorrar codigo
+
+var ahorracodigo = function(){
+    alert("hola")
+}
+
+dedo.addEventListener("click", ahorracodigo, false)
+dedo.removeEventListener("click", ahorracodigo)
+                        
+
+
+
+                           > Objeto event
+                           | 
+dedo.onclick            |    = function (nada){
+dedo.addEventListener() |
+                                nada.altkey
+                                nada.ctrlkey
+                                nada.onkeydown
+                                nada.onkeyup
+
+
+                                nada.stopPropagation() // Se carga la propagación de eventos. Para la ejecución de flujo de eventos
+                                nada.preventDefault()  // 
+                            }
+
+document.body.onkeydown = function (e){
+    if (e.altkey){
+        console.log ("Se ha pulsado alt")
+    }
+    if (e.charCode==44){            ***Preguntar por el relleno***
+        
+    }
+
+}
+
