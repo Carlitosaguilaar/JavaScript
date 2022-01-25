@@ -1,0 +1,16 @@
+section{
+    margin-left: 5%;
+    margin-top: 2%;
+    background-color: red;
+    width: 750px;
+    height: 500px;
+}
+
+p{
+    background-color: yellow;
+    width: 125px;
+}
+
+a{
+    color: black;
+}
