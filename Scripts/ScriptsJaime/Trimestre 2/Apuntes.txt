@@ -256,7 +256,7 @@ Hacemos un window.onload = function(){
 
 
 
-function validar(){
+function validar(){                             //Creamos la funcion
     var f = document.getElementById("formu");
     var cn = f.nombre;
 
@@ -276,8 +276,10 @@ function validar(){
 
     var repe = f.repclave
 
-    if ( pass.value != repe.value){
+    if ( pass.value != repe.value){             //Comprobar que coinciden ambas contraseñas
         alert ("Las contraseñas no coinciden")
+        repe.focus();
+        return;
     }
 
     var pass = f.clave
@@ -291,7 +293,7 @@ function validar(){
 
     var edad = f.edad       //Usamos un NaN (Not a Number)                              
     
-    if ( isNan(f.edad.value)){
+    if ( isNan(f.edad.value)){                  //Comprobar que la contraseña solo tiene numeros, nada de letras
         alert ("No se pueden poner letras en la edad);
         pass.focus();
         return;
@@ -303,13 +305,15 @@ function validar(){
         return;
     }
 
-    if (lista.selectedIndex==0){
+    if (lista.selectedIndex==0){        //Sinceramente este no se que hacia JAJJ
         alert
+        pass.focus();
+        return;
     }
 
     var cond = f.condiciones
 
-    if (!cond.checked){
+    if (!cond.checked){                                         //Comprobar que alguna condicion del checkbox está seleccionado
         alert ("Ninguna de las condiciones están marcadas")
         pass.focus();
         return;
@@ -317,12 +321,12 @@ function validar(){
 
 
     var edad = f.edad;
-    if ( (edad.value<18) || (edad.value>60) ) {
+    if ( (edad.value<18) || (edad.value>60) ) {         //Comprobar que la edad está entre unos valores (en este caso, entre 18 y 60)
         alert ("")
         pass.focus();
         return;
     }
     
-    f.submit();
+    f.submit();         //Hacemos el submit al final para que al pulsar el boton, haga el submit cuando se haya comprobado TODO
 
 }

@@ -1,12 +1,11 @@
+window.onload = function () {
 
-function copiar() {
-    var dedo = document.getElementById("cajatexto1");
-    var dedo2 = document.getElementById("cajatexto2");
+    var campos = document.querySelectorAll("input[type='text']");
 
-    dedo2.placeholder = dedo.innerHTML
-    
-    if (dedo.innerHTML!="") {
-        dedo2.innerHTML = dedo.innerHTML;
-        
+    var boton = document.querySelector("input[type='button']");
+
+    boton.onclick = function (){
+
+        campos[1].placeholder = campos[0].value;
     }
-} 
+}
