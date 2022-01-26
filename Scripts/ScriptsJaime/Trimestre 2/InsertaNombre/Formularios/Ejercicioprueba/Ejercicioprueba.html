@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="Ejercicioprueba.js"></script>
+    <title>Validacion formu</title>
+    <style>
+        html{
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        form{
+            background-color: black;
+            box-shadow: 0 0 10px green;
+            border-radius: 20px;
+            padding: 2rem;
+        }
+        label{
+            font-size: 1.4rem;
+            align-self: flex-start;
+            color: whitesmoke;
+        }
+        input{
+            padding: 1rem;
+            outline: none;
+            width: 100%;
+
+        }
+        .campo{
+            display: flex;
+            flex-direction: column;
+            margin: 2rem;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <div class="campo">
+            <label for="campo1">Nombre</label>
+            <input type="text" name="campo1">
+
+        </div>
+        <div class="campo">
+            <label for="campo2">Contraseña</label>
+            <input type="password" name="campo2">
+
+        </div>
+        <div class="campo">
+            <label for="campo3">Repite Contraseña</label>
+            <input type="password" name="campo3">
+
+        </div>
+        <input type="submit" name="campoSubmit" value="Envio">
+    </form>
+</body>
+</html>
