@@ -415,3 +415,21 @@ document.body.onkeydown = function (e){
 
 }
 
+
+
+
+ API Rest ful 
+--------------
+
+Servicio web del lado servidor
+
+Los datos se devuelven en archivos XML(ocupa más, menos usado) / JSON(más liviano). 
+El cliente no procesa la BBDD, la procesa el servidor.
+
+Se necesitan la url y los verbos (realmente son comandos)
+
+
+                 -  - get  --> consultar
+Los verbos son  |   - post --> enviar
+                | -put/patch --> editar   (insert, alter, update)
+                 -  - delete --> borrar
