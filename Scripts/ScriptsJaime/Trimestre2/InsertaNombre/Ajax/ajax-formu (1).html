@@ -62,11 +62,11 @@
         
         //OBJETO FORMDATA
         //FORMA 1
-        var fock = document.querySelector("form");
+        var formu = document.querySelector("form");
         /*
         
         var usu = document.querySelector("[name='usuario']").value;
-        var clave = fock.clave.value;
+        var clave = formu.clave.value;
 
         var fd = new FormData();
         fd.append('nepe',usu);
@@ -74,7 +74,7 @@
         */
 
         //FORMA 2: obtengo TODO el formulario de golpe (cada campo se pasa con su name)
-        var fd = new FormData(fock);
+        var fd = new FormData(formu);
 
 
         //Paso 1: crear el objeto XMLHttpRequest
