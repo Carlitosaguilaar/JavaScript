@@ -467,5 +467,3 @@ Se necesitan la url y los verbos (realmente son comandos)
 Los verbos son  |   - post --> enviar
                 | -put/patch --> editar   (insert, alter, update)
                  -  - delete --> borrar
-
-
