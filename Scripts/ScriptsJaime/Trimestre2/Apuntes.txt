@@ -466,4 +466,451 @@ Se necesitan la url y los verbos (realmente son comandos)
                  -  - get  --> consultar
 Los verbos son  |   - post --> enviar
                 | -put/patch --> editar   (insert, alter, update)
+                 -  - delete --> borrarArrays functions (funciones con callback)
+                                    ---> Funciones como parámetros de funciones
+
+                                                *** Cuidao con el orden ***
+function misterio()             function misterio (edad, nombre, peso, num)                 function misterio()
+        |                                               |
+        |                                               |
+        v                                               v
+No recibe y no devuelve                     Recibe pero no devuelve
+
+
+
+function canuto (num, function()) ***Es una funcion dentro de otra funcion. Para que funcione la principal se tiene que ejecutar primero la que está dentro***
+
+-Ejemplo-
+
+var lista=[2,3,27,8,32,54,89,11,13,7,9, 23]
+
+--------------------------------------------|
+                                            |
+function mayorEdad(e){                      |
+    return e>=18    //Pregunta si e >=18    |   *3
+}                                           |
+                                            |
+--------------------------------------------|
+
+alert (mayorEdad(19))
+
+---> Devuelve true ya que e =19
+
+var res = lista.some(mayorEdad);    (Si utliizamos esta opcion, hay que escribir anteriormente el *3)
+
+/
+
+                                
+var res = lista.some ( (e)=>(e>=18;) ){
+var otra = lista.every (mayorEdad)
+
+
+  |--  lista.some = Va a buscar si algun valor de lista cumple el requisito que se pide en la funcion
+-|                                                                                                                        } Devuelve boolean
+  |--   lista.every = Va a comprobar que todos los valores cumplen (devuelve true), si no, devuelve false.
+
+
+funcion mostrar (e){
+    res = e·2;
+    console.log (res)
+}
+
+EL foreach, las funciones no van a devolver nada, aunque usemos el return. NUNCA VA A DEVOLVER NADA
+
+lista.foreach (mostrar)
+/
+             ***Elemento, indice/posicion***
+lista.foreach (function(e,i)){
+    var cad = ""
+    console.log(cad);
+}
+
+lista.map es como un foreach con diferencia de que este hace el return (para ello crea un array con los resultados del return)
+
+lista.map (nuevo);
+
+    function nuevo (e){
+        return e*2;
+    }
+
+El map devuelve el mismo tamaño, lo unico que si no se cumple el requisito, saca undefined
+
+--------------------------------------------------------------
+JSON arrays
+var nombrearray = ["Juan", "Fran", "Carlos", "Santi"];     //Se definen los arrays de esta forma
+console.log (usuarios[2]); 
+var temperaturas  = [
+                    [17,22,13],
+                    [27,21,23,32,35,1,3]
+                    ["ILLO", "JAJ"]
+                    ]  
+
+
+
+--------------------------------------------------------------
+JSON objetcs (no POO)       (Crear una estructura que almacene datos de una manera que nosotros queremos)
+var alumno = { nombre: "Juan", 
+               edad: = 23,
+               dni: "79839217S",
+               asignaturas: ["cliente", "servidores", "Interfaces"],
+               mentor:{
+                   nombre:"Sr Hormiga",
+                   edad: 83,
+                   sueldo: 1200,
+                   ciclos:['daw','dam','3d']
+               }
+             }
+
+Para sacar  por consola
+console.log(alumno.edad);
+alumno.edad=21 (Para cambiar el valor)
+alumno.asignaturas.foreach()
+        function (e){
+            console.log(e)
+        }
+
+        for (let i=0; i< alumno.asignaturas.length; i++)
+        console.log (alumno.asignaturas[i])
+
+Console.log (alumno.mentor.nombre) (Saca el nombre del mentor del alumno)
+
+--------------------------------------------------------------
+Recorrer todos los elementos de un objeto / array
+for, foreach, forin, forof
+
+forin
+-----
+for (let clave in alumno){
+    console.log(clave)
+}
+
+  for (let clave in alumno){
+    if (clave == 'mentor') {
+        for (let otra in alumno[clave]){
+            console.log (otra+" tiene "+alumno[clave][otra])
+        }
+    }
+    else{
+        console.log(clave+" tiene "+alumno[clave])
+    }
+}
+
+------
+forof 
+---
+
+for (let num of alumno.asignaturas){
+    console.log(num)
+}
+
+--------------------------------------------------------------
+
+
+    Cookies
+---------------------------------------
+
+    Las cookies son una cadena de texto y se manejan con un document.cookies.
+
+---------------------------------------
+
+    WebStorage [Local Storage / Session Storage]
+
+---------------------------------------
+
+
+Local Storage: Se mantiene la información. 
+
+Se utiliza, para esto, un Array, que se va a ir rellenando usando cualquiera de las 3 diferentes formas de hacerlo.
+
+var nombre=73;
+                                     localStorage.popper = "Juanfran" / localStorage.popper = nombre;
+1- Almacenar valores. Hay 3 formas { localStorage ['popper'] = "Juanfran"                            }
+                                     localStorage.setItems('popper', "Juanfran")
+
+                                     var valor = localStorage.popper;
+2- Recuperar valores. Hay 3 formas { var valor = localStorage['popper']          }
+                                     var valor = localStorage.getItem('popper')
+
+
+3- Borrar valores. Hay 3 formas    { localStorage.removeItem('popper') (Borra una entrada)  }
+                                     localStorage.clear();
+
+
+4- Objetos del Storage
+
+    for (let i=0; i<localStorage.length;i++){
+        var clave = localStorage.key(i)
+            localStorage[clave]
+            localStorage.getItem(clave)
+            localStorage.clave ***No deberia funcionar***
+    }
+
+---------------------------------------
+
+- Guardar un objeto en el Storage. 
+
+---------------------------------------
+        var alumno = {
+            nombre: "Juanfran",
+            edad:23,
+            curso:2
+        }
+
+Se utilizan las dos funciones siguientes
+        JSON.Stringify(objeto); //Convierte el texto_json a texto
+        JSON.parse(texto_json)  //Convierte el texto a objeto
+
+    ***Ejemplo***
+        var temp = JSON.Stringify(alumno);
+        alert (temp)
+        localStorage.rober = temp;
+        alumnootro = JSON.parse(localStorage.rober);
+
+
+---------------------------------------
+
+
+Transformar información a texto -->  Almacenarlo en el Storage --> Devolverlo con formato JSON
+
+
+Session Storage: Si cierro el navegador, la información se pierde
+
+var nombre=73;
+                                     sessionStorage.popper = "Juanfran" / sessionStorage.popper = nombre;
+1- Almacenar valores. Hay 3 formas { sessionStorage ['popper'] = "Juanfran"                                   }
+                                     sessionStorage.setItems('popper', "Juanfran")
+
+                                     var valor = sessionStorage.popper;
+2- Recuperar valores. Hay 3 formas { var valor = sessionStorage['popper']                                     }
+                                     var valor = sessionStorage.getItem('popper')
+
+
+3- Borrar valores. Hay 3 formas    { sessionStorage.removeItem('popper') (Borra una entrada)  }
+                                     sessionStorage.clear();        //Borra todas las variables
+
+--------------------------------------------------------------
+Tema 10 13 y 15 no caen en el examen            ************
+
+Formularios
+-----------
+
+
+Para acceder a un formulario, hay diferentes formas
+
+var f = d.getElementById
+    f = d.querySelector("form")
+    f = d.forms[0]
+    f = d.links
+    f = d.images
+
+    Acceder al tipo de un input
+
+    d.querySelector(input[type="text"])
+    Si se le añade un name al input ---> f.nombre
+
+
+    var texto = f.nombre.value
+
+--------------------------------------------------------------
+
+
+    Validar formulario
+    ------------------
+
+form id="formu" action "asdhkasjd.php"
+    campo       name = 'nombre'
+    campo       name = 'clave'
+    campo       name = 'repclave'
+    campo       name = 'edad'
+    checkbox    name = 'xoxo'
+    checkbox2   name = 'xoxo'
+
+Tenemos un formulario, con su respectivo boton submit. Abrimos el archivo js "validar.js". Creamos la funcion correspondiente ( function validar(), por ejemplo)
+
+Hacemos un window.onload = function(){
+    var boton = document.querySelector("input");
+    boton.onclick = function(e){
+        e.preventDefault();
+        validar();
+    }
+}
+
+
+
+
+function validar(){                             //Creamos la funcion
+    var f = document.getElementById("formu");
+    var cn = f.nombre;
+
+    if (cn.value == "" || cn.value.length==0){      //Comprobar que NO esté vacío el campo
+        alert ("El campo nombre no puede esta vacío");  //Mínimo exigible, hacer cosas con DOM suben nota
+        cn.focus();
+        return; // (Para que no siga comprobando más campos)
+    }
+
+    var pass = f.clave
+
+    if ( (pass.value.length<8) && (pass.value.length>12) ){     //Comprobar que la contraseña tengas entre 8 y 12 valres
+        alert ("La contraseña no cumple el requisito de numero de caracteres);
+        pass.focus();
+        return;
+    }
+
+    var repe = f.repclave
+
+    if ( pass.value != repe.value){             //Comprobar que coinciden ambas contraseñas
+        alert ("Las contraseñas no coinciden")
+        repe.focus();
+        return;
+    }
+
+    var pass = f.clave
+    var nombre = f.nombre;
+
+    if (nombre.value == pass.value){
+        pass.value="";
+        pass.focus();
+        return;
+    }
+
+    var edad = f.edad       //Usamos un NaN (Not a Number)                              
+    
+    if ( isNan(f.edad.value)){                  //Comprobar que la contraseña solo tiene numeros, nada de letras
+        alert ("No se pueden poner letras en la edad);
+        pass.focus();
+        return;
+    }
+
+    if ( !f.xoxo[0].checked && !f.xoxo[1].checked){                //Comprobar que al menos un checkbox está marcado
+        alert ("Ninguno de los campos están marcados")
+        pass.focus();
+        return;
+    }
+
+    if (lista.selectedIndex==0){        //Sinceramente este no se que hacia JAJJ
+        alert
+        pass.focus();
+        return;
+    }
+
+    var cond = f.condiciones
+
+    if (!cond.checked){                                         //Comprobar que alguna condicion del checkbox está seleccionado
+        alert ("Ninguna de las condiciones están marcadas")
+        pass.focus();
+        return;
+    }
+
+
+    var edad = f.edad;
+    if ( (edad.value<18) || (edad.value>60) ) {         //Comprobar que la edad está entre unos valores (en este caso, entre 18 y 60)
+        alert ("")
+        pass.focus();
+        return;
+    }
+    
+    f.submit();         //Hacemos el submit al final para que al pulsar el boton, haga el submit cuando se haya comprobado TODO
+
+}
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+FLUJO DE EVENTOS
+
+Fase Burbuja                        |       Fase captura                            |               Cuando hay mezcla
+                                    |                                               |           
++ Específico        div     3       |   + Genérico        div       1               |           
+                                    |                                               |           (1) Todos los de captura (true)
+    |               p       2       |       |               p       2               |           
+    |                               |       |                                       |           
+    V               b       1       |       V                                       |           (2) Todos los de burbuja (false)
++ Genérico                          |   + Específico        b       3               |
+
+
+Listeners
+---------
+
+(1) Atributos de HTML
+    <p onclick="mostrar()">
+
+(2) En JS
+
+    var dedo = d.querySelector("p")
+    dedo.onclick = function(){
+        alert ("")
+    }
+
+    addEventListener()  //Asocia un evento a un elemento
+    removeEventListener() //Quita un evento asociado a un elemento
+
+
+// Ponemos el nombre del evento sin el "on", la función y, por ultimo true (evento de captura) o false (evento de burbuja)
+(3) var dedo =
+                //el evento sin el "on"
+    dedo.addEventListener("click", function(){
+                                    alert ("Hola")
+    }, false)
+
+//para borrar:
+
+    dedo.removeEventListener("click", function(){
+                                    alert ("Hola")
+    })
+
+
+//Se puede crear una variable con la funcion, qur serviria para ahorrar codigo
+
+var ahorracodigo = function(){
+    alert("hola")
+}
+
+dedo.addEventListener("click", ahorracodigo, false)
+dedo.removeEventListener("click", ahorracodigo)
+                        
+
+
+
+                           > Objeto event
+                           | 
+dedo.onclick            |    = function (nada){
+dedo.addEventListener() |
+                                nada.altkey
+                                nada.ctrlkey
+                                nada.onkeydown
+                                nada.onkeyup
+
+
+                                nada.stopPropagation() // Se carga la propagación de eventos. Para la ejecución de flujo de eventos
+                                nada.preventDefault()  // 
+                            }
+
+document.body.onkeydown = function (e){
+    if (e.altkey){
+        console.log ("Se ha pulsado alt")
+    }
+    if (e.charCode==44){            ***Preguntar por el relleno***
+        
+    }
+
+}
+
+
+
+
+ API Rest ful 
+--------------
+
+Servicio web del lado servidor
+
+Los datos se devuelven en archivos XML(ocupa más, menos usado) / JSON(más liviano). 
+El cliente no procesa la BBDD, la procesa el servidor.
+
+Se necesitan la url y los verbos (realmente son comandos)
+
+
+                 -  - get  --> consultar
+Los verbos son  |   - post --> enviar
+                | -put/patch --> editar   (insert, alter, update)
                  -  - delete --> borrar
