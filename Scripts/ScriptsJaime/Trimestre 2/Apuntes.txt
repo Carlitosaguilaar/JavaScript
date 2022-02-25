@@ -137,8 +137,17 @@ for (let num of alumno.asignaturas){
 
 --------------------------------------------------------------
 
-Las cookies son una cadena de texto y se manejan con un document.cookies.
-WebStorage [Local Storage / Session Storage]
+
+    Cookies
+---------------------------------------
+
+    Las cookies son una cadena de texto y se manejan con un document.cookies.
+
+---------------------------------------
+
+    WebStorage [Local Storage / Session Storage]
+
+---------------------------------------
 
 
 Local Storage: Se mantiene la información. 
@@ -168,8 +177,11 @@ var nombre=73;
             localStorage.clave ***No deberia funcionar***
     }
 
+---------------------------------------
+
 - Guardar un objeto en el Storage. 
 
+---------------------------------------
         var alumno = {
             nombre: "Juanfran",
             edad:23,
@@ -187,6 +199,7 @@ Se utilizan las dos funciones siguientes
         alumnootro = JSON.parse(localStorage.rober);
 
 
+---------------------------------------
 
 
 Transformar información a texto -->  Almacenarlo en el Storage --> Devolverlo con formato JSON
@@ -208,7 +221,7 @@ var nombre=73;
                                      sessionStorage.clear();        //Borra todas las variables
 
 --------------------------------------------------------------
-Tema 10 13 y 15 no caen en el examen
+Tema 10 13 y 15 no caen en el examen            ************
 
 Formularios
 -----------
