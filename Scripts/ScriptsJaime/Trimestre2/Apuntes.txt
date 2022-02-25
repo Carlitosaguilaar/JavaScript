@@ -429,6 +429,27 @@ document.body.onkeydown = function (e){
 }
 
 
+1º: creamos el objeto XMLHttpRequest.
+    let manolito;
+    if(window.HttpRequest){
+    manolito = new HttpRequest();
+}
+else{
+    manolito = new ActiveXObject(“Microsoft.XMLHTTP”);
+}
+
+2º: crea la petición de datos (el verbo, la dirección del recurso).
+    manolito.open(“GET”,”http://localhost/ajax/consulta.php”);
+
+3ª: crear la función para manejar los datos que me llegan (se asocia al evento LOAD).
+    manolito.addEventListener(‘load’, function(datos){
+    console.log(datos.target.response);
+    document.getElementById(“parra”).innerHTML = datos.target.response;
+});
+
+4ª: enviar la petición.
+    manolito.send();
+
 
 
  API Rest ful 
@@ -446,3 +467,5 @@ Se necesitan la url y los verbos (realmente son comandos)
 Los verbos son  |   - post --> enviar
                 | -put/patch --> editar   (insert, alter, update)
                  -  - delete --> borrar
+
+
